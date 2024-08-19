@@ -50,8 +50,21 @@ setup_optional() {
     install_cask "font-meslo-lg-nerd-font"
     install_package "powerlevel10k"
     install_package "koekeishiya/formulae/yabai"
-    echo "!!! Refer to https://github.com/Legend28469/dotfiles for Yabai setup !!!"
     install_package "koekeishiya/formulae/skhd"
+
+    echo "!!! Refer to https://github.com/Legend28469/dotfiles for Yabai setup !!!"
+
+    echo "Starting yabai and skhd services..."
+    echo "Note: You may be prompted to grant accessibility permissions."
+    echo "Please grant the permissions when prompted."
+
+    yabai --start-service
+    skhd --start-service
+
+    echo "If you encountered any issues with starting the services,"
+    echo "please run the following commands manually after granting permissions:"
+    echo "yabai --start-service"
+    echo "skhd --start-service"
 }
 
 # Function to clone dotfiles and use stow

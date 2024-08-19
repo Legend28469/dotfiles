@@ -100,7 +100,10 @@ A tiling window manager for macOS based on binary space partitioning.
 
 ```
 brew install koekeishiya/formulae/yabai
+yabai --start-service
 ```
+
+Allow any prompts for accessibility permissions.
 
 #### SKHD
 
@@ -108,7 +111,10 @@ A simple hotkey daemon for macOS that works well with Yabai.
 
 ```
 brew install koekeishiya/formulae/skhd
+skhd --start-service
 ```
+
+Allow any prompts for accessibility permissions.
 
 ## Installation
 
