@@ -2,41 +2,112 @@
 
 This repository contains the dotfiles for my system
 
+## Prerequisites
+
+* ZSH - Installed by default on Mac confirm using `echo $0`
+* The config files coming in must not exist already in the final install location
+
 ## Requirements
 
-Ensure you have the following installed on your system
+> ℹ️ You can use this installer to automate the process
+> [setup_dotfiles.sh](https://github.com/Legend28469/dotfiles/blob/master/setup_dotfiles.sh)
 
-### Brew
+### Core 
+
+These are the key aspects of the config
+
+#### Brew
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Git
+#### Git
 
 ```
 brew install git
 ```
 
-### Stow
+#### TMUX
 
+```
+brew install tmux
+```
+
+#### Stow
+GNU Stow is a symlink farm manager that helps manage dotfiles.
 ```
 brew install stow
 ```
 
+#### Neovim
+
+```
+brew install neovim
+```
+
+### Optional
+
+Can have a good setup without these but they're still nice to have
+
+#### Wezterm
+
+```
+brew install --cask wezterm
+```
+
+#### Meslo Nerd Font
+
+```
+brew install font-meslo-lg-nerd-font
+```
+
+#### Powerlevel10k
+
+```
+brew install powerlevel10k
+```
+
+#### Yabai
+
+##### Setup 
+> 1. Open Several Desktops (~7) on Your Machine
+> 2. Go To Keyboard Settings > Shortcuts > Mission Control
+> 3. Expand Mission Control and Turn On Shortcuts for Switching Spaces 1-7 with “Ctrl + # Of Space”
+> 4. Go to System Settings > Accessibility > Display
+> 5. Turn On Reduce Motion
+> 6. Go To System Settings > Desktop & Dock > Mission Control
+> 7. Turn off “Automatically Rearrange Spaces Based On Most Recent Use”
+> 8. Personally, I only keep “Displays Have Separate Spaces” turned on here, and that’s what I’d recommend
+
+```
+brew install koekeishiya/formulae/yabai
+```
+
+#### SKHD
+
+```
+brew install koekeishiya/formulae/skhd
+```
+
 ## Installation
 
-1. First clone/download the dotfiles to your $HOME directory
+1. First clone/download the dotfiles to your $HOME directory and CD to the new "dotfiles" directory
 
 ```
 git clone git@github.com/legend28469/dotfiles.git
 cd dotfiles
 ```
 
+> ℹ️ You can optionally delete configs you don't care about before running stow
+
 2. Use GNU Stow to create symlinks (will put stuff where they belong)
+
 ```
 stow .
 ```
 
 ## Reference / More Information
-[Stow has forever changed the way I manage my dotfiles](https://www.youtube.com/watch?v=y6XCebnB9gs)
+* [Stow has forever changed the way I manage my dotfiles](https://www.youtube.com/watch?v=y6XCebnB9gs)
+* [How To Setup And Use The Yabai Tiling Window Manager On Mac](https://www.josean.com/posts/yabai-setup)
+* [TMUX Setup](https://www.josean.com/posts/tmux-setup)
