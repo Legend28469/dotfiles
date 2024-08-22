@@ -48,7 +48,14 @@ return {
           end,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
-
+        window = {
+          completion = {
+            border = 'rounded',
+          },
+          documentation = {
+            border = 'rounded',
+          },
+        },
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
         --
@@ -111,7 +118,30 @@ return {
           { name = 'luasnip' },
           { name = 'path' },
         },
+
+        ---@diagnostic disable-next-line: missing-fields
+        formatting = {
+          format = function(entry, vim_item)
+            if vim.tbl_contains({ 'path' }, entry.source.name) then
+              local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
+              if icon then
+                vim_item.kind = icon
+                vim_item.kind_hl_group = hl_group
+                return vim_item
+              end
+            end
+            return require('lspkind').cmp_format { with_text = false }(entry, vim_item)
+          end,
+        },
       }
+
+      vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = 'rounded',
+      })
+
+      vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+        border = 'rounded',
+      })
     end,
   },
 }
