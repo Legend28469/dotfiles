@@ -34,6 +34,8 @@ alias la="eza -a"
 eval "$(zoxide init zsh)"
 alias cd="z"
 
+alias cls="clear"
+
 # ---- tmux-256color fix ----
 # Refer to --> https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/
 # Only needed on older Mac versions
