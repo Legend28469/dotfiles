@@ -35,6 +35,16 @@ install_cask() {
     fi
 }
 
+# Function to check and add a Homebrew tap
+add_tap() {
+    if ! brew tap | grep -q "$1"; then
+        echo "Adding tap $1..."
+        brew tap "$1"
+    else
+        echo "Tap $1 is already added."
+    fi
+}
+
 # Function to setup core components
 setup_core() {
     install_homebrew
@@ -51,6 +61,8 @@ setup_optional() {
     install_package "powerlevel10k"
     install_package "koekeishiya/formulae/yabai"
     install_package "koekeishiya/formulae/skhd"
+    add_tap "arl/arl"
+    install_package "gitmux"
 
     echo "!!! Refer to https://github.com/Legend28469/dotfiles for Yabai setup !!!"
 

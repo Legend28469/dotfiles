@@ -84,6 +84,15 @@ A theme for Zsh that emphasizes speed, flexibility, and out-of-the-box experienc
 brew install powerlevel10k
 ```
 
+#### Gitmux
+
+Shows git information in TMUX status bar.
+
+```
+brew tap arl/arl
+brew install gitmux
+```
+
 #### Yabai
 
 A tiling window manager for macOS based on binary space partitioning.
